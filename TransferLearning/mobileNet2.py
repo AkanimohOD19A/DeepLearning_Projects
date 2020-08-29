@@ -24,12 +24,12 @@ train_batches = ImageDataGenerator(preprocessing_function = prep).\
     flow_from_directory(directory=train_path,
                         target_size=(224,224), classes=['cat','dog'], batch_size=10)
 
-test_batches = ImageDataGenerator(preprocessing_function = prep).\
-    flow_from_directory(directory=test_path,
+valid_batches = ImageDataGenerator(preprocessing_function = prep).\
+    flow_from_directory(directory=valid_path,
                         target_size=target_size, classes=['cat','dog'], batch_size=10)
 
-valid_batches = ImageDataGenerator(preprocessing_function = prep).\
-    flow_from_directory(directory= valid_path,
+test_batches = ImageDataGenerator(preprocessing_function = prep).\
+    flow_from_directory(directory= test_path,
                         target_size=target_size, classes=['cat','dog'], batch_size=10, shuffle=False)
 
 mobile = keras.applications.mobilenet.MobileNet()
